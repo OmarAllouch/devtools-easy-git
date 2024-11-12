@@ -47,7 +47,7 @@ def get_git_repo():
     """Return the current Git repository."""
     try:
         return Repo(os.getcwd())
-    except GitCommandError:
+    except:
         click.echo("Not a git repository.")
         sys.exit(1)
 
