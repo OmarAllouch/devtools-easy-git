@@ -97,7 +97,7 @@ def quick_commit():
         click.echo("Amended the last commit.")
 
     # Step 5: Push changes
-    push_choice = questionary.confirm("Would you like to push now?").ask()
+    push_choice = questionary.confirm("Would you like to push now?", auto_enter=False).ask()
     if push_choice:
         try:
             repo.git.push()
