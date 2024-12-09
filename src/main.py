@@ -11,6 +11,7 @@ aliases = {
     "h": "help",
 }
 
+
 class AliasedGroup(click.Group):
     def get_command(self, ctx, cmd_name):
         rv = click.Group.get_command(self, ctx, cmd_name)
@@ -28,6 +29,7 @@ class AliasedGroup(click.Group):
         _, cmd, args = super().resolve_command(ctx, args)
         return cmd.name, cmd, args
 
+
 def handle_kill_signal(signal_number, frame):
     """Handle kill signals like SIGINT and SIGTERM."""
     click.echo("\nReceived termination signal. Exiting gracefully...")
@@ -38,16 +40,18 @@ def handle_kill_signal(signal_number, frame):
 signal.signal(signal.SIGINT, handle_kill_signal)
 signal.signal(signal.SIGTERM, handle_kill_signal)
 
+
 @click.group(cls=AliasedGroup)
 def cli():
     """easy-git: Simplify your Git workflows."""
     pass
 
+
 def get_git_repo():
     """Return the current Git repository."""
     try:
         return Repo(os.getcwd())
-    except:
+    except Exception:
         click.echo("Not a git repository.")
         sys.exit(1)
 
@@ -69,9 +73,11 @@ def quick_commit():
     selected_files = questionary.checkbox(
         "Select files to stage (use 'a' to toggle all, 'j'/'k' to navigate):",
         choices=[{"name": file} for file in changed_files],
-        validate=lambda answers: "You must select at least one file." if not answers else True,
+        validate=lambda answers: "You must select at least one file."
+        if not answers
+        else True,
         use_jk_keys=True,
-        instruction="(space to select, 'a' to toggle all)"
+        instruction="(space to select, 'a' to toggle all)",
     ).ask()
 
     if not selected_files:
@@ -85,8 +91,7 @@ def quick_commit():
 
     # Step 4: Get commit message or amend
     commit_type = questionary.select(
-        "Choose commit type:",
-        choices=["New Commit", "Amend Last Commit"]
+        "Choose commit type:", choices=["New Commit", "Amend Last Commit"]
     ).ask()
 
     if commit_type == "New Commit":
@@ -97,7 +102,9 @@ def quick_commit():
         click.echo("Amended the last commit.")
 
     # Step 5: Push changes
-    push_choice = questionary.confirm("Would you like to push now?", auto_enter=False).ask()
+    push_choice = questionary.confirm(
+        "Would you like to push now?", auto_enter=False
+    ).ask()
     if push_choice:
         try:
             repo.git.push()
@@ -106,6 +113,7 @@ def quick_commit():
             click.echo("Error: Unable to push. Check your remote settings.")
     else:
         click.echo("Skipped pushing.")
+
 
 if __name__ == "__main__":
     cli()
