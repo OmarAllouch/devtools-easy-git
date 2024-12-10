@@ -16,10 +16,15 @@ def confirm_action(message: str) -> bool:
 
 
 def handle_kill_signal(signal_number, frame):
-    """Handle kill signals like SIGINT and SIGTERM."""
-    if signal_number == signal.SIGINT:
+    """Handle kill signals"""
+    if signal_number in [signal.SIGINT, signal.SIGTERM]:
         click.echo("\nReceived interrupt signal. Exiting...")
         sys.exit(0)
+
+
+# Register signal handlers
+signal.signal(signal.SIGINT, handle_kill_signal)
+signal.signal(signal.SIGTERM, handle_kill_signal)
 
 
 aliases = {
@@ -44,8 +49,3 @@ class AliasedGroup(click.Group):
         # always return the full command name
         _, cmd, args = super().resolve_command(ctx, args)
         return cmd.name if cmd is not None else "", cmd, args
-
-
-# Register signal handlers
-signal.signal(signal.SIGINT, handle_kill_signal)
-signal.signal(signal.SIGTERM, handle_kill_signal)
