@@ -29,6 +29,7 @@ signal.signal(signal.SIGTERM, handle_kill_signal)
 
 aliases = {
     "c": "quick-commit",
+    "s": "sync",
     "h": "help",
 }
 
