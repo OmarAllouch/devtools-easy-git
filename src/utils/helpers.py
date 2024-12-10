@@ -3,9 +3,14 @@ import sys
 import click
 import signal
 
+from utils.logging import get_logger
+
+logger = get_logger()
+
 
 def is_git_repository() -> bool:
     """Check if the current directory is a Git repository."""
+    logger.info("Checking if the current directory is a Git repository.")
     return os.path.isdir(".git")
 
 
@@ -20,6 +25,8 @@ def handle_kill_signal(signal_number, frame):
     if signal_number in [signal.SIGINT, signal.SIGTERM]:
         click.echo("\nReceived interrupt signal. Exiting...")
         sys.exit(0)
+    logger.critical(f"Received unknown signal: {signal_number}")
+    sys.exit(1)
 
 
 # Register signal handlers
@@ -44,6 +51,7 @@ class AliasedGroup(click.Group):
             return None
         elif len(matches) == 1:
             return click.Group.get_command(self, ctx, matches[0])
+        logger.error(f"Too many matches: {', '.join(sorted(matches))}")
         ctx.fail(f"Too many matches: {', '.join(sorted(matches))}")
 
     def resolve_command(self, ctx, args):

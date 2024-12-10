@@ -2,6 +2,9 @@
 import click
 from cli import qc, sc
 from utils.helpers import AliasedGroup
+from utils.logging import configure_logging, get_logger
+
+logger = get_logger()
 
 
 @click.group(cls=AliasedGroup)
@@ -23,4 +26,6 @@ def sync():
 
 
 if __name__ == "__main__":
+    configure_logging()
+    logger.info("Starting easy-git...")
     cli()
