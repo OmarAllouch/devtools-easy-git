@@ -1,7 +1,9 @@
 import os
 import sys
+from typing import Optional
+
 import click
-from git import Repo, GitCommandError
+from git import GitCommandError, Remote, Repo
 
 
 def get_git_repo():
@@ -37,3 +39,18 @@ def push(repo: Repo) -> None:
         click.echo("Pushed to the remote repository.")
     except GitCommandError:
         click.echo("Error: Unable to push. Check your remote settings.")
+
+
+def get_origin(repo: Repo) -> Remote:
+    """Return the origin remote of the repository."""
+    return repo.remotes.origin
+
+
+def pull_changes(origin: Remote, branch: Optional[str]) -> None:
+    """Pull changes from the remote and rebase them."""
+    click.echo(f"Pulling changes from {origin.url}...")
+    try:
+        origin.pull(rebase=True, refspec=f"{branch}:{branch}")
+        click.echo("Sync complete.")
+    except GitCommandError:
+        click.echo("Error: Unable to pull changes. You may have uncommitted changes.")
