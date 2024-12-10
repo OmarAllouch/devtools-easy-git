@@ -14,12 +14,6 @@ def is_git_repository() -> bool:
     return os.path.isdir(".git")
 
 
-def confirm_action(message: str) -> bool:
-    """Prompt the user to confirm an action."""
-    response = input(f"{message} (y/n): ")
-    return response.lower() == "y"
-
-
 def handle_kill_signal(signal_number, frame):
     """Handle kill signals"""
     if signal_number in [signal.SIGINT, signal.SIGTERM]:
