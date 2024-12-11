@@ -34,8 +34,8 @@ Once installed, you can use the tool directly from the command line.
 
 ### Available Commands
 
-- **`quick-commit`**: Perform the add-commit-push cycle.
-- **`c`**: Alias for the `quick-commit` command.
+- **`quick-commit`**: Perform the add-commit-push cycle. You can use `c` as a shortcut for this command.
+- **`sync`**: Sync the local repository with the remote repository. You can use `s` as a shortcut for this command.
 
 ### Example Usage
 
@@ -54,7 +54,7 @@ Once installed, you can use the tool directly from the command line.
 
 ## 🚧 Work in Progress
 
-This project is still in progress, and new features will be added over time. Current functionalities include the `quick-commit` cycle, but more tools and features will be added in the future.
+This project is still in progress, and new features will be added over time. Current functionalities include the `quick-commit` and `sync` commands, but more tools and features will be added in the future.
 
 Stay tuned for updates!
 
