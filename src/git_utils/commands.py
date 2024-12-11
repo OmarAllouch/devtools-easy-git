@@ -5,7 +5,7 @@ from typing import Optional
 import click
 from git import GitCommandError, Remote, Repo
 
-from utils.logging import get_logger
+from src.utils.logging import get_logger
 
 logger = get_logger()
 
