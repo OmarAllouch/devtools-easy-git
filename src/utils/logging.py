@@ -15,14 +15,15 @@ def configure_logging():
     logger.setLevel(logging.DEBUG)
 
     formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
-    log_level = logging.DEBUG if debug else logging.WARNING
 
+    file_log_level = logging.DEBUG if debug else logging.WARNING
     file_handler = logging.FileHandler(log_file_path)
-    file_handler.setLevel(log_level)
+    file_handler.setLevel(file_log_level)
     file_handler.setFormatter(formatter)
 
+    stream_log_level = logging.DEBUG if debug else logging.CRITICAL
     stream_handler = logging.StreamHandler(sys.stdout)
-    stream_handler.setLevel(log_level)
+    stream_handler.setLevel(stream_log_level)
     stream_handler.setFormatter(formatter)
 
     if logger.hasHandlers():
@@ -32,7 +33,7 @@ def configure_logging():
     logger.addHandler(stream_handler)
 
     logger.info(
-        f"Logging initialized. Debug: {os.getenv("DEBUG", "False").upper()}, Log Level: {log_level}"
+        f"Logging initialized. Debug: {os.getenv("DEBUG", "False").upper()}, File Log Level: {logging.getLevelName(file_log_level)}, Stream Log Level: {logging.getLevelName(stream_log_level)}"
     )
     return logger
 
