@@ -18,6 +18,10 @@ pre-commit = "^4.0.1"
 [tool.poetry.scripts]
 easy-git = "src.main:cli"
 
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.4"
+ruff = "^0.8.2"
+
 [tool.ruff]
 exclude = [".git", "dist"]
 line-length = 88
