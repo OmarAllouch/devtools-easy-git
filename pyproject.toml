@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "easy-git-cli"
-version = "0.2.0"
+version = "0.3.0"
 description = "A CLI tool to simplify Git workflows"
 authors = ["Omar Allouch <allouchomar1@gmail.com>"]
 license = "MIT"
