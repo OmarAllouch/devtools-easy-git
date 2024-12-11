@@ -21,6 +21,7 @@ easy-git = "src.main:cli"
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.4"
 ruff = "^0.8.2"
+sphinx = "^8.1.3"
 
 [tool.ruff]
 exclude = [".git", "dist"]

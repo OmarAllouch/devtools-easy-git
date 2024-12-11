@@ -10,6 +10,13 @@ from git_utils import (
 
 
 def quick_commit() -> None:
+    """
+    Interactive add-commit-push cycle.
+    You can call this command by running `easy-git quick-commit` or `easy-git qc` for short.
+    This will first list all changed files (tracked and untracked), then prompt you to select the files you want to stage.
+    After staging the files, you can choose to either make a new commit or amend the last commit.
+    Finally, you can choose to push the changes to the remote.
+    """
     repo = get_git_repo()
 
     changed_files = get_changed_files(repo)
