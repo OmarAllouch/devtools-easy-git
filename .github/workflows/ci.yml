@@ -31,3 +31,14 @@ jobs:
       - name: Run unit tests
         run: poetry run pytest
 
+  analysis:
+    name: Code Analysis
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run Ruff (Linting)
+        run: |
+          pip install ruff
+          ruff check .
