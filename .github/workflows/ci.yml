@@ -84,8 +84,7 @@ jobs:
   docs:
     name: Publish Documentation
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-    needs: [test, analysis]
+    needs: release
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
