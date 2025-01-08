@@ -57,11 +57,7 @@ jobs:
         run: |
           pip install poetry
           poetry install
-          mkdir -p docs/
-
-      - uses: ammaraskar/sphinx-action@master
-        with:
-          docs-folder: "docs/"
+          poetry run sphinx-build -b html docs/source docs/build/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
