@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>git_utils.commands &#8212; Easy Git CLI 0.3.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="../../_static/documentation_options.js?v=e259d695"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Easy Git CLI 0.3.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">git_utils.commands</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for git_utils.commands</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+
+<span class="kn">import</span> <span class="nn">click</span>
+<span class="kn">from</span> <span class="nn">git</span> <span class="kn">import</span> <span class="n">GitCommandError</span><span class="p">,</span> <span class="n">Remote</span><span class="p">,</span> <span class="n">Repo</span>
+
+<span class="kn">from</span> <span class="nn">src.utils.logging</span> <span class="kn">import</span> <span class="n">get_logger</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">get_logger</span><span class="p">()</span>
+
+
+<div class="viewcode-block" id="get_git_repo">
+<a class="viewcode-back" href="../../git_utils.html#git_utils.commands.get_git_repo">[docs]</a>
+<span class="k">def</span> <span class="nf">get_git_repo</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Repo</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the current Git repository.&quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Getting the current Git repository.&quot;</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Current working directory: </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">repo</span> <span class="o">=</span> <span class="n">Repo</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">repo</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="s2">&quot;Not a git repository.&quot;</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Not a git repository: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="get_changed_files">
+<a class="viewcode-back" href="../../git_utils.html#git_utils.commands.get_changed_files">[docs]</a>
+<span class="k">def</span> <span class="nf">get_changed_files</span><span class="p">(</span><span class="n">repo</span><span class="p">:</span> <span class="n">Repo</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the list of changed files in the repository.&quot;&quot;&quot;</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Getting the list of changed files.&quot;</span><span class="p">)</span>
+    <span class="n">changed_files</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">a_path</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">repo</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="kc">None</span><span class="p">)]</span>  <span class="c1"># Unstaged files</span>
+    <span class="n">changed_files</span> <span class="o">+=</span> <span class="n">repo</span><span class="o">.</span><span class="n">untracked_files</span>  <span class="c1"># Untracked files</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">changed_files</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">changed_files</span></div>
+
+
+
+<div class="viewcode-block" id="add_file">
+<a class="viewcode-back" href="../../git_utils.html#git_utils.commands.add_file">[docs]</a>
+<span class="k">def</span> <span class="nf">add_file</span><span class="p">(</span><span class="n">repo</span><span class="p">:</span> <span class="n">Repo</span><span class="p">,</span> <span class="n">file</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add the given file to the staging area.&quot;&quot;&quot;</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Adding </span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s2"> to the staging area.&quot;</span><span class="p">)</span>
+    <span class="n">repo</span><span class="o">.</span><span class="n">git</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">file</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="commit">
+<a class="viewcode-back" href="../../git_utils.html#git_utils.commands.commit">[docs]</a>
+<span class="k">def</span> <span class="nf">commit</span><span class="p">(</span><span class="n">repo</span><span class="p">:</span> <span class="n">Repo</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">amend</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Commit the staged changes with the given message.&quot;&quot;&quot;</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Committing the changes with message: </span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">repo</span><span class="o">.</span><span class="n">git</span><span class="o">.</span><span class="n">commit</span><span class="p">(</span><span class="n">m</span><span class="o">=</span><span class="n">message</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">amend</span> <span class="k">else</span> <span class="n">repo</span><span class="o">.</span><span class="n">git</span><span class="o">.</span><span class="n">commit</span><span class="p">(</span><span class="s2">&quot;--amend&quot;</span><span class="p">,</span> <span class="s2">&quot;--no-edit&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="push">
+<a class="viewcode-back" href="../../git_utils.html#git_utils.commands.push">[docs]</a>
+<span class="k">def</span> <span class="nf">push</span><span class="p">(</span><span class="n">repo</span><span class="p">:</span> <span class="n">Repo</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Push the changes to the remote repository.&quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Pushing the changes to the remote repository.&quot;</span><span class="p">)</span>
+        <span class="n">repo</span><span class="o">.</span><span class="n">git</span><span class="o">.</span><span class="n">push</span><span class="p">()</span>
+        <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="s2">&quot;Pushed to the remote repository.&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="n">GitCommandError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="s2">&quot;Error: Unable to push. Check your remote settings.&quot;</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to push to the remote repository: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="get_origin">
+<a class="viewcode-back" href="../../git_utils.html#git_utils.commands.get_origin">[docs]</a>
+<span class="k">def</span> <span class="nf">get_origin</span><span class="p">(</span><span class="n">repo</span><span class="p">:</span> <span class="n">Repo</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Remote</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the origin remote of the repository.&quot;&quot;&quot;</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Getting the origin remote.&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">repo</span><span class="o">.</span><span class="n">remotes</span><span class="o">.</span><span class="n">origin</span></div>
+
+
+
+<div class="viewcode-block" id="pull_changes">
+<a class="viewcode-back" href="../../git_utils.html#git_utils.commands.pull_changes">[docs]</a>
+<span class="k">def</span> <span class="nf">pull_changes</span><span class="p">(</span><span class="n">origin</span><span class="p">:</span> <span class="n">Remote</span><span class="p">,</span> <span class="n">branch</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Pull changes from the remote and rebase them.&quot;&quot;&quot;</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pulling changes from </span><span class="si">{</span><span class="n">origin</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+    <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Syncing with remote </span><span class="si">{</span><span class="n">origin</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s2">...&quot;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">origin</span><span class="o">.</span><span class="n">pull</span><span class="p">(</span><span class="n">rebase</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">refspec</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">branch</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">branch</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="s2">&quot;Sync complete.&quot;</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Successfully synced with remote.&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s2">&quot;Could not resolve hostname&quot;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">):</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="s2">&quot;Network issue: Could not connect to remote. Check your network connection.&quot;</span>
+            <span class="p">)</span>
+        <span class="k">elif</span> <span class="s2">&quot;authentication failed&quot;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">):</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Authentication failed. Check your Git credentials.&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to sync with remote: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Easy Git CLI 0.3.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">git_utils.commands</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Omar Allouch.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    </div>
+  </body>
+</html>

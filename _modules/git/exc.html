@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>git.exc &#8212; Easy Git CLI 0.3.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="../../_static/documentation_options.js?v=e259d695"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Easy Git CLI 0.3.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">git.exc</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for git.exc</h1><div class="highlight"><pre>
+<span></span><span class="c1"># Copyright (C) 2008, 2009 Michael Trier (mtrier@gmail.com) and contributors</span>
+<span class="c1">#</span>
+<span class="c1"># This module is part of GitPython and is released under the</span>
+<span class="c1"># 3-Clause BSD License: https://opensource.org/license/bsd-3-clause/</span>
+
+<span class="sd">&quot;&quot;&quot;Exceptions thrown throughout the git package.&quot;&quot;&quot;</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># Defined in gitdb.exc:</span>
+    <span class="s2">&quot;AmbiguousObjectName&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;BadName&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;BadObject&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;BadObjectType&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;InvalidDBRoot&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ODBError&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ParseError&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;UnsupportedOperation&quot;</span><span class="p">,</span>
+    <span class="c1"># Introduced in this module:</span>
+    <span class="s2">&quot;GitError&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;InvalidGitRepositoryError&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;WorkTreeRepositoryUnsupported&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;NoSuchPathError&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;UnsafeProtocolError&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;UnsafeOptionError&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;CommandError&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;GitCommandNotFound&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;GitCommandError&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;CheckoutError&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;CacheError&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;UnmergedEntriesError&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;HookExecutionError&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;RepositoryDirtyError&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="kn">from</span> <span class="nn">gitdb.exc</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">AmbiguousObjectName</span><span class="p">,</span>
+    <span class="n">BadName</span><span class="p">,</span>
+    <span class="n">BadObject</span><span class="p">,</span>
+    <span class="n">BadObjectType</span><span class="p">,</span>
+    <span class="n">InvalidDBRoot</span><span class="p">,</span>
+    <span class="n">ODBError</span><span class="p">,</span>
+    <span class="n">ParseError</span><span class="p">,</span>
+    <span class="n">UnsupportedOperation</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">git.compat</span> <span class="kn">import</span> <span class="n">safe_decode</span>
+<span class="kn">from</span> <span class="nn">git.util</span> <span class="kn">import</span> <span class="n">remove_password_if_present</span>
+
+<span class="c1"># typing ----------------------------------------------------</span>
+
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">TYPE_CHECKING</span><span class="p">,</span> <span class="n">Union</span>
+
+<span class="kn">from</span> <span class="nn">git.types</span> <span class="kn">import</span> <span class="n">PathLike</span>
+
+<span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">git.repo.base</span> <span class="kn">import</span> <span class="n">Repo</span>
+
+<span class="c1"># ------------------------------------------------------------------</span>
+
+
+<span class="k">class</span> <span class="nc">GitError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Base class for all package exceptions.&quot;&quot;&quot;</span>
+
+
+<span class="k">class</span> <span class="nc">InvalidGitRepositoryError</span><span class="p">(</span><span class="n">GitError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Thrown if the given repository appears to have an invalid format.&quot;&quot;&quot;</span>
+
+
+<span class="k">class</span> <span class="nc">WorkTreeRepositoryUnsupported</span><span class="p">(</span><span class="n">InvalidGitRepositoryError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Thrown to indicate we can&#39;t handle work tree repositories.&quot;&quot;&quot;</span>
+
+
+<span class="k">class</span> <span class="nc">NoSuchPathError</span><span class="p">(</span><span class="n">GitError</span><span class="p">,</span> <span class="ne">OSError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Thrown if a path could not be access by the system.&quot;&quot;&quot;</span>
+
+
+<span class="k">class</span> <span class="nc">UnsafeProtocolError</span><span class="p">(</span><span class="n">GitError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Thrown if unsafe protocols are passed without being explicitly allowed.&quot;&quot;&quot;</span>
+
+
+<span class="k">class</span> <span class="nc">UnsafeOptionError</span><span class="p">(</span><span class="n">GitError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Thrown if unsafe options are passed without being explicitly allowed.&quot;&quot;&quot;</span>
+
+
+<span class="k">class</span> <span class="nc">CommandError</span><span class="p">(</span><span class="n">GitError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Base class for exceptions thrown at every stage of :class:`~subprocess.Popen`</span>
+<span class="sd">    execution.</span>
+
+<span class="sd">    :param command:</span>
+<span class="sd">        A non-empty list of argv comprising the command-line.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_msg</span> <span class="o">=</span> <span class="s2">&quot;Cmd(&#39;</span><span class="si">%s</span><span class="s2">&#39;) failed</span><span class="si">%s</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Format string with 2 ``%s`` for ``&lt;cmdline&gt;`` and the rest.</span>
+
+<span class="sd">    For example: ``&quot;&#39;%s&#39; failed%s&quot;``</span>
+
+<span class="sd">    Subclasses may override this attribute, provided it is still in this form.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">command</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span> <span class="nb">str</span><span class="p">],</span>
+        <span class="n">status</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="ne">Exception</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">stderr</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">bytes</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">stdout</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">bytes</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="p">(</span><span class="nb">tuple</span><span class="p">,</span> <span class="nb">list</span><span class="p">)):</span>
+            <span class="n">command</span> <span class="o">=</span> <span class="n">command</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">command</span> <span class="o">=</span> <span class="n">remove_password_if_present</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">status</span>
+        <span class="k">if</span> <span class="n">status</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="ne">Exception</span><span class="p">):</span>
+                <span class="n">status</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">(&#39;</span><span class="si">%s</span><span class="s2">&#39;)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">status</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">safe_decode</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">status</span><span class="p">)))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">status</span> <span class="o">=</span> <span class="s2">&quot;exit code(</span><span class="si">%s</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="nb">int</span><span class="p">(</span><span class="n">status</span><span class="p">)</span>
+                <span class="k">except</span> <span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
+                    <span class="n">s</span> <span class="o">=</span> <span class="n">safe_decode</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">status</span><span class="p">))</span>
+                    <span class="n">status</span> <span class="o">=</span> <span class="s2">&quot;&#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="n">s</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">else</span> <span class="n">s</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cmd</span> <span class="o">=</span> <span class="n">safe_decode</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">command</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cmdline</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">safe_decode</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">command</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cause</span> <span class="o">=</span> <span class="n">status</span> <span class="ow">and</span> <span class="s2">&quot; due to: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">status</span> <span class="ow">or</span> <span class="s2">&quot;!&quot;</span>
+        <span class="n">stdout_decode</span> <span class="o">=</span> <span class="n">safe_decode</span><span class="p">(</span><span class="n">stdout</span><span class="p">)</span>
+        <span class="n">stderr_decode</span> <span class="o">=</span> <span class="n">safe_decode</span><span class="p">(</span><span class="n">stderr</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">stdout_decode</span> <span class="ow">and</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  stdout: &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="n">stdout_decode</span> <span class="ow">or</span> <span class="s2">&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stderr</span> <span class="o">=</span> <span class="n">stderr_decode</span> <span class="ow">and</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  stderr: &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="n">stderr_decode</span> <span class="ow">or</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_msg</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  cmdline: </span><span class="si">%s%s%s</span><span class="s2">&quot;</span><span class="p">)</span> <span class="o">%</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_cmd</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_cause</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_cmdline</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stderr</span><span class="p">,</span>
+        <span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">GitCommandNotFound</span><span class="p">(</span><span class="n">CommandError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Thrown if we cannot find the ``git`` executable in the :envvar:`PATH` or at the</span>
+<span class="sd">    path given by the :envvar:`GIT_PYTHON_GIT_EXECUTABLE` environment variable.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">command</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">str</span><span class="p">],</span> <span class="n">cause</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="ne">Exception</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="n">cause</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_msg</span> <span class="o">=</span> <span class="s2">&quot;Cmd(&#39;</span><span class="si">%s</span><span class="s2">&#39;) not found</span><span class="si">%s</span><span class="s2">&quot;</span>
+
+
+<div class="viewcode-block" id="GitCommandError">
+<a class="viewcode-back" href="../../git_utils.html#git_utils.GitCommandError">[docs]</a>
+<span class="k">class</span> <span class="nc">GitCommandError</span><span class="p">(</span><span class="n">CommandError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Thrown if execution of the git command fails with non-zero status code.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GitCommandError.__init__">
+<a class="viewcode-back" href="../../git_utils.html#git_utils.GitCommandError.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">command</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span> <span class="nb">str</span><span class="p">],</span>
+        <span class="n">status</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="ne">Exception</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">stderr</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">bytes</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">stdout</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">bytes</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="n">status</span><span class="p">,</span> <span class="n">stderr</span><span class="p">,</span> <span class="n">stdout</span><span class="p">)</span></div>
+</div>
+
+
+
+<span class="k">class</span> <span class="nc">CheckoutError</span><span class="p">(</span><span class="n">GitError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Thrown if a file could not be checked out from the index as it contained</span>
+<span class="sd">    changes.</span>
+
+<span class="sd">    The :attr:`failed_files` attribute contains a list of relative paths that failed to</span>
+<span class="sd">    be checked out as they contained changes that did not exist in the index.</span>
+
+<span class="sd">    The :attr:`failed_reasons` attribute contains a string informing about the actual</span>
+<span class="sd">    cause of the issue.</span>
+
+<span class="sd">    The :attr:`valid_files` attribute contains a list of relative paths to files that</span>
+<span class="sd">    were checked out successfully and hence match the version stored in the index.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">failed_files</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">PathLike</span><span class="p">],</span>
+        <span class="n">valid_files</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">PathLike</span><span class="p">],</span>
+        <span class="n">failed_reasons</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="ne">Exception</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">failed_files</span> <span class="o">=</span> <span class="n">failed_files</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">failed_reasons</span> <span class="o">=</span> <span class="n">failed_reasons</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">valid_files</span> <span class="o">=</span> <span class="n">valid_files</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="ne">Exception</span><span class="o">.</span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;:</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">failed_files</span>
+
+
+<span class="k">class</span> <span class="nc">CacheError</span><span class="p">(</span><span class="n">GitError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Base for all errors related to the git index, which is called &quot;cache&quot;</span>
+<span class="sd">    internally.&quot;&quot;&quot;</span>
+
+
+<span class="k">class</span> <span class="nc">UnmergedEntriesError</span><span class="p">(</span><span class="n">CacheError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Thrown if an operation cannot proceed as there are still unmerged</span>
+<span class="sd">    entries in the cache.&quot;&quot;&quot;</span>
+
+
+<span class="k">class</span> <span class="nc">HookExecutionError</span><span class="p">(</span><span class="n">CommandError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Thrown if a hook exits with a non-zero exit code.</span>
+
+<span class="sd">    This provides access to the exit code and the string returned via standard output.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">command</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span> <span class="nb">str</span><span class="p">],</span>
+        <span class="n">status</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="ne">Exception</span><span class="p">],</span>
+        <span class="n">stderr</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">bytes</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">stdout</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">bytes</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="n">status</span><span class="p">,</span> <span class="n">stderr</span><span class="p">,</span> <span class="n">stdout</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_msg</span> <span class="o">=</span> <span class="s2">&quot;Hook(&#39;</span><span class="si">%s</span><span class="s2">&#39;) failed</span><span class="si">%s</span><span class="s2">&quot;</span>
+
+
+<span class="k">class</span> <span class="nc">RepositoryDirtyError</span><span class="p">(</span><span class="n">GitError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Thrown whenever an operation on a repository fails as it has uncommitted changes</span>
+<span class="sd">    that would be overwritten.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">repo</span><span class="p">:</span> <span class="s2">&quot;Repo&quot;</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">repo</span> <span class="o">=</span> <span class="n">repo</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="n">message</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;Operation cannot be performed on </span><span class="si">%r</span><span class="s2">: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">repo</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Easy Git CLI 0.3.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">git.exc</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Omar Allouch.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    </div>
+  </body>
+</html>

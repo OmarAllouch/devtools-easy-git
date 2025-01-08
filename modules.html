@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>src &#8212; Easy Git CLI 0.3.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="_static/documentation_options.js?v=e259d695"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="cli package" href="cli.html" />
+    <link rel="prev" title="Welcome to Easy Git CLI’s documentation" href="index.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cli.html" title="cli package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to Easy Git CLI’s documentation"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Easy Git CLI 0.3.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">src</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="src">
+<h1>src<a class="headerlink" href="#src" title="Link to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">cli package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#module-cli.quick_commit">cli.quick_commit module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cli.html#cli.quick_commit.quick_commit"><code class="docutils literal notranslate"><span class="pre">quick_commit()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#module-cli.sync">cli.sync module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cli.html#cli.sync.sync"><code class="docutils literal notranslate"><span class="pre">sync()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#module-cli">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cli.html#cli.qc"><code class="docutils literal notranslate"><span class="pre">qc()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli.html#cli.sc"><code class="docutils literal notranslate"><span class="pre">sc()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="git_utils.html">git_utils package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="git_utils.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git_utils.html#module-git_utils.commands">git_utils.commands module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="git_utils.html#git_utils.commands.add_file"><code class="docutils literal notranslate"><span class="pre">add_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="git_utils.html#git_utils.commands.commit"><code class="docutils literal notranslate"><span class="pre">commit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="git_utils.html#git_utils.commands.get_changed_files"><code class="docutils literal notranslate"><span class="pre">get_changed_files()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="git_utils.html#git_utils.commands.get_git_repo"><code class="docutils literal notranslate"><span class="pre">get_git_repo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="git_utils.html#git_utils.commands.get_origin"><code class="docutils literal notranslate"><span class="pre">get_origin()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="git_utils.html#git_utils.commands.pull_changes"><code class="docutils literal notranslate"><span class="pre">pull_changes()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="git_utils.html#git_utils.commands.push"><code class="docutils literal notranslate"><span class="pre">push()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="git_utils.html#module-git_utils">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="git_utils.html#git_utils.GitCommandError"><code class="docutils literal notranslate"><span class="pre">GitCommandError</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.GitCommandError.__init__"><code class="docutils literal notranslate"><span class="pre">GitCommandError.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="git_utils.html#git_utils.Repo"><code class="docutils literal notranslate"><span class="pre">Repo</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.DAEMON_EXPORT_FILE"><code class="docutils literal notranslate"><span class="pre">Repo.DAEMON_EXPORT_FILE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.GitCommandWrapperType"><code class="docutils literal notranslate"><span class="pre">Repo.GitCommandWrapperType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.__init__"><code class="docutils literal notranslate"><span class="pre">Repo.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo._clone"><code class="docutils literal notranslate"><span class="pre">Repo._clone()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo._common_dir"><code class="docutils literal notranslate"><span class="pre">Repo._common_dir</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo._config_reader"><code class="docutils literal notranslate"><span class="pre">Repo._config_reader()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo._get_alternates"><code class="docutils literal notranslate"><span class="pre">Repo._get_alternates()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo._get_config_path"><code class="docutils literal notranslate"><span class="pre">Repo._get_config_path()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo._get_untracked_files"><code class="docutils literal notranslate"><span class="pre">Repo._get_untracked_files()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo._set_alternates"><code class="docutils literal notranslate"><span class="pre">Repo._set_alternates()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo._to_full_tag_path"><code class="docutils literal notranslate"><span class="pre">Repo._to_full_tag_path()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo._working_tree_dir"><code class="docutils literal notranslate"><span class="pre">Repo._working_tree_dir</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.active_branch"><code class="docutils literal notranslate"><span class="pre">Repo.active_branch</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.alternates"><code class="docutils literal notranslate"><span class="pre">Repo.alternates</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.archive"><code class="docutils literal notranslate"><span class="pre">Repo.archive()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.bare"><code class="docutils literal notranslate"><span class="pre">Repo.bare</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.blame"><code class="docutils literal notranslate"><span class="pre">Repo.blame()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.blame_incremental"><code class="docutils literal notranslate"><span class="pre">Repo.blame_incremental()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.branches"><code class="docutils literal notranslate"><span class="pre">Repo.branches</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.clone"><code class="docutils literal notranslate"><span class="pre">Repo.clone()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.clone_from"><code class="docutils literal notranslate"><span class="pre">Repo.clone_from()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.close"><code class="docutils literal notranslate"><span class="pre">Repo.close()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.commit"><code class="docutils literal notranslate"><span class="pre">Repo.commit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.common_dir"><code class="docutils literal notranslate"><span class="pre">Repo.common_dir</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.config_level"><code class="docutils literal notranslate"><span class="pre">Repo.config_level</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.config_reader"><code class="docutils literal notranslate"><span class="pre">Repo.config_reader()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.config_writer"><code class="docutils literal notranslate"><span class="pre">Repo.config_writer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.create_head"><code class="docutils literal notranslate"><span class="pre">Repo.create_head()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.create_remote"><code class="docutils literal notranslate"><span class="pre">Repo.create_remote()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.create_submodule"><code class="docutils literal notranslate"><span class="pre">Repo.create_submodule()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.create_tag"><code class="docutils literal notranslate"><span class="pre">Repo.create_tag()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.currently_rebasing_on"><code class="docutils literal notranslate"><span class="pre">Repo.currently_rebasing_on()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.daemon_export"><code class="docutils literal notranslate"><span class="pre">Repo.daemon_export</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.delete_head"><code class="docutils literal notranslate"><span class="pre">Repo.delete_head()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.delete_remote"><code class="docutils literal notranslate"><span class="pre">Repo.delete_remote()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.delete_tag"><code class="docutils literal notranslate"><span class="pre">Repo.delete_tag()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.description"><code class="docutils literal notranslate"><span class="pre">Repo.description</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.git"><code class="docutils literal notranslate"><span class="pre">Repo.git</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.git_dir"><code class="docutils literal notranslate"><span class="pre">Repo.git_dir</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.has_separate_working_tree"><code class="docutils literal notranslate"><span class="pre">Repo.has_separate_working_tree()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.head"><code class="docutils literal notranslate"><span class="pre">Repo.head</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.heads"><code class="docutils literal notranslate"><span class="pre">Repo.heads</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.ignored"><code class="docutils literal notranslate"><span class="pre">Repo.ignored()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.index"><code class="docutils literal notranslate"><span class="pre">Repo.index</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.init"><code class="docutils literal notranslate"><span class="pre">Repo.init()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.is_ancestor"><code class="docutils literal notranslate"><span class="pre">Repo.is_ancestor()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.is_dirty"><code class="docutils literal notranslate"><span class="pre">Repo.is_dirty()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.is_valid_object"><code class="docutils literal notranslate"><span class="pre">Repo.is_valid_object()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.iter_commits"><code class="docutils literal notranslate"><span class="pre">Repo.iter_commits()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.iter_submodules"><code class="docutils literal notranslate"><span class="pre">Repo.iter_submodules()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.iter_trees"><code class="docutils literal notranslate"><span class="pre">Repo.iter_trees()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.merge_base"><code class="docutils literal notranslate"><span class="pre">Repo.merge_base()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.re_author_committer_start"><code class="docutils literal notranslate"><span class="pre">Repo.re_author_committer_start</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.re_envvars"><code class="docutils literal notranslate"><span class="pre">Repo.re_envvars</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.re_hexsha_only"><code class="docutils literal notranslate"><span class="pre">Repo.re_hexsha_only</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.re_hexsha_shortened"><code class="docutils literal notranslate"><span class="pre">Repo.re_hexsha_shortened</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.re_tab_full_line"><code class="docutils literal notranslate"><span class="pre">Repo.re_tab_full_line</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.re_whitespace"><code class="docutils literal notranslate"><span class="pre">Repo.re_whitespace</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.references"><code class="docutils literal notranslate"><span class="pre">Repo.references</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.refs"><code class="docutils literal notranslate"><span class="pre">Repo.refs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.remote"><code class="docutils literal notranslate"><span class="pre">Repo.remote()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.remotes"><code class="docutils literal notranslate"><span class="pre">Repo.remotes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.rev_parse"><code class="docutils literal notranslate"><span class="pre">Repo.rev_parse()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.submodule"><code class="docutils literal notranslate"><span class="pre">Repo.submodule()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.submodule_update"><code class="docutils literal notranslate"><span class="pre">Repo.submodule_update()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.submodules"><code class="docutils literal notranslate"><span class="pre">Repo.submodules</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.tag"><code class="docutils literal notranslate"><span class="pre">Repo.tag()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.tags"><code class="docutils literal notranslate"><span class="pre">Repo.tags</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.tree"><code class="docutils literal notranslate"><span class="pre">Repo.tree()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.unsafe_git_clone_options"><code class="docutils literal notranslate"><span class="pre">Repo.unsafe_git_clone_options</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.untracked_files"><code class="docutils literal notranslate"><span class="pre">Repo.untracked_files</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.working_dir"><code class="docutils literal notranslate"><span class="pre">Repo.working_dir</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_utils.html#git_utils.Repo.working_tree_dir"><code class="docutils literal notranslate"><span class="pre">Repo.working_tree_dir</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="git_utils.html#git_utils.add_file"><code class="docutils literal notranslate"><span class="pre">add_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="git_utils.html#git_utils.commit"><code class="docutils literal notranslate"><span class="pre">commit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="git_utils.html#git_utils.get_changed_files"><code class="docutils literal notranslate"><span class="pre">get_changed_files()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="git_utils.html#git_utils.get_git_repo"><code class="docutils literal notranslate"><span class="pre">get_git_repo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="git_utils.html#git_utils.get_origin"><code class="docutils literal notranslate"><span class="pre">get_origin()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="git_utils.html#git_utils.pull_changes"><code class="docutils literal notranslate"><span class="pre">pull_changes()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="git_utils.html#git_utils.push"><code class="docutils literal notranslate"><span class="pre">push()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="main.html">main module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html">utils package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#module-utils.helpers">utils.helpers module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="utils.html#utils.helpers.AliasedGroup"><code class="docutils literal notranslate"><span class="pre">AliasedGroup</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="utils.html#utils.helpers.AliasedGroup.get_command"><code class="docutils literal notranslate"><span class="pre">AliasedGroup.get_command()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.html#utils.helpers.AliasedGroup.resolve_command"><code class="docutils literal notranslate"><span class="pre">AliasedGroup.resolve_command()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="utils.html#utils.helpers.handle_kill_signal"><code class="docutils literal notranslate"><span class="pre">handle_kill_signal()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="utils.html#utils.helpers.is_git_repository"><code class="docutils literal notranslate"><span class="pre">is_git_repository()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#module-utils.logging">utils.logging module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="utils.html#utils.logging.configure_logging"><code class="docutils literal notranslate"><span class="pre">configure_logging()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="utils.html#utils.logging.get_logger"><code class="docutils literal notranslate"><span class="pre">get_logger()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#module-utils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="index.html"
+                          title="previous chapter">Welcome to Easy Git CLI’s documentation</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="cli.html"
+                          title="next chapter">cli package</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/modules.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cli.html" title="cli package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to Easy Git CLI’s documentation"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Easy Git CLI 0.3.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">src</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Omar Allouch.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    </div>
+  </body>
+</html>

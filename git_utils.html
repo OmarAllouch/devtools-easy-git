@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>git_utils package &#8212; Easy Git CLI 0.3.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="_static/documentation_options.js?v=e259d695"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="main module" href="main.html" />
+    <link rel="prev" title="cli package" href="cli.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="main.html" title="main module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="cli.html" title="cli package"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Easy Git CLI 0.3.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" accesskey="U">src</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">git_utils package</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="git-utils-package">
+<h1>git_utils package<a class="headerlink" href="#git-utils-package" title="Link to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-git_utils.commands">
+<span id="git-utils-commands-module"></span><h2>git_utils.commands module<a class="headerlink" href="#module-git_utils.commands" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="git_utils.commands.add_file">
+<span class="sig-prename descclassname"><span class="pre">git_utils.commands.</span></span><span class="sig-name descname"><span class="pre">add_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repo</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#git_utils.Repo" title="git.repo.base.Repo"><span class="pre">Repo</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/git_utils/commands.html#add_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.commands.add_file" title="Link to this definition">¶</a></dt>
+<dd><p>Add the given file to the staging area.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="git_utils.commands.commit">
+<span class="sig-prename descclassname"><span class="pre">git_utils.commands.</span></span><span class="sig-name descname"><span class="pre">commit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repo</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#git_utils.Repo" title="git.repo.base.Repo"><span class="pre">Repo</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amend</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/git_utils/commands.html#commit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.commands.commit" title="Link to this definition">¶</a></dt>
+<dd><p>Commit the staged changes with the given message.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="git_utils.commands.get_changed_files">
+<span class="sig-prename descclassname"><span class="pre">git_utils.commands.</span></span><span class="sig-name descname"><span class="pre">get_changed_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repo</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#git_utils.Repo" title="git.repo.base.Repo"><span class="pre">Repo</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/git_utils/commands.html#get_changed_files"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.commands.get_changed_files" title="Link to this definition">¶</a></dt>
+<dd><p>Return the list of changed files in the repository.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="git_utils.commands.get_git_repo">
+<span class="sig-prename descclassname"><span class="pre">git_utils.commands.</span></span><span class="sig-name descname"><span class="pre">get_git_repo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#git_utils.Repo" title="git.repo.base.Repo"><span class="pre">Repo</span></a></span></span><a class="reference internal" href="_modules/git_utils/commands.html#get_git_repo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.commands.get_git_repo" title="Link to this definition">¶</a></dt>
+<dd><p>Return the current Git repository.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="git_utils.commands.get_origin">
+<span class="sig-prename descclassname"><span class="pre">git_utils.commands.</span></span><span class="sig-name descname"><span class="pre">get_origin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repo</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#git_utils.Repo" title="git.repo.base.Repo"><span class="pre">Repo</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Remote</span></span></span><a class="reference internal" href="_modules/git_utils/commands.html#get_origin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.commands.get_origin" title="Link to this definition">¶</a></dt>
+<dd><p>Return the origin remote of the repository.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="git_utils.commands.pull_changes">
+<span class="sig-prename descclassname"><span class="pre">git_utils.commands.</span></span><span class="sig-name descname"><span class="pre">pull_changes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">origin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Remote</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">branch</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/git_utils/commands.html#pull_changes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.commands.pull_changes" title="Link to this definition">¶</a></dt>
+<dd><p>Pull changes from the remote and rebase them.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="git_utils.commands.push">
+<span class="sig-prename descclassname"><span class="pre">git_utils.commands.</span></span><span class="sig-name descname"><span class="pre">push</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repo</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#git_utils.Repo" title="git.repo.base.Repo"><span class="pre">Repo</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/git_utils/commands.html#push"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.commands.push" title="Link to this definition">¶</a></dt>
+<dd><p>Push the changes to the remote repository.</p>
+</dd></dl>
+
+</section>
+<section id="module-git_utils">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-git_utils" title="Link to this heading">¶</a></h2>
+<dl class="py exception">
+<dt class="sig sig-object py" id="git_utils.GitCommandError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">git_utils.</span></span><span class="sig-name descname"><span class="pre">GitCommandError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Exception</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stderr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/git/exc.html#GitCommandError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.GitCommandError" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">CommandError</span></code></p>
+<p>Thrown if execution of the git command fails with non-zero status code.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="git_utils.GitCommandError.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Exception</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stderr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/git/exc.html#GitCommandError.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.GitCommandError.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="git_utils.Repo">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">git_utils.</span></span><span class="sig-name descname"><span class="pre">Repo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">~os.PathLike[str]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">odbt:</span> <span class="pre">~typing.Type[~gitdb.db.loose.LooseObjectDB]</span> <span class="pre">=</span> <span class="pre">&lt;class</span> <span class="pre">'git.db.GitCmdObjectDB'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_parent_directories:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expand_vars:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/git/repo/base.html#Repo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.Repo" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents a git repository and allows you to query references, create commit
+information, generate diffs, create and clone repositories, and query the log.</p>
+<p>The following attributes are worth using:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#git_utils.Repo.working_dir" title="git_utils.Repo.working_dir"><code class="xref py py-attr docutils literal notranslate"><span class="pre">working_dir</span></code></a> is the working directory of the git command, which is the
+working tree directory if available or the <code class="docutils literal notranslate"><span class="pre">.git</span></code> directory in case of bare
+repositories.</p></li>
+<li><p><a class="reference internal" href="#git_utils.Repo.working_tree_dir" title="git_utils.Repo.working_tree_dir"><code class="xref py py-attr docutils literal notranslate"><span class="pre">working_tree_dir</span></code></a> is the working tree directory, but will return <code class="docutils literal notranslate"><span class="pre">None</span></code>
+if we are a bare repository.</p></li>
+<li><p><a class="reference internal" href="#git_utils.Repo.git_dir" title="git_utils.Repo.git_dir"><code class="xref py py-attr docutils literal notranslate"><span class="pre">git_dir</span></code></a> is the <code class="docutils literal notranslate"><span class="pre">.git</span></code> repository directory, which is always set.</p></li>
+</ul>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="git_utils.Repo.DAEMON_EXPORT_FILE">
+<span class="sig-name descname"><span class="pre">DAEMON_EXPORT_FILE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'git-daemon-export-ok'</span></em><a class="headerlink" href="#git_utils.Repo.DAEMON_EXPORT_FILE" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="git_utils.Repo.GitCommandWrapperType">
+<span class="sig-name descname"><span class="pre">GitCommandWrapperType</span></span><a class="headerlink" href="#git_utils.Repo.GitCommandWrapperType" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">Git</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="git_utils.Repo.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">~os.PathLike[str]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">odbt:</span> <span class="pre">~typing.Type[~gitdb.db.loose.LooseObjectDB]</span> <span class="pre">=</span> <span class="pre">&lt;class</span> <span class="pre">'git.db.GitCmdObjectDB'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_parent_directories:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expand_vars:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/git/repo/base.html#Repo.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.Repo.__init__" title="Link to this definition">¶</a></dt>
+<dd><p>Create a new <a class="reference internal" href="#git_utils.Repo" title="git_utils.Repo"><code class="xref py py-class docutils literal notranslate"><span class="pre">Repo</span></code></a> instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> – <p>The path to either the root git directory or the bare git repo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">repo</span> <span class="o">=</span> <span class="n">Repo</span><span class="p">(</span><span class="s2">&quot;/Users/mtrier/Development/git-python&quot;</span><span class="p">)</span>
+<span class="n">repo</span> <span class="o">=</span> <span class="n">Repo</span><span class="p">(</span><span class="s2">&quot;/Users/mtrier/Development/git-python.git&quot;</span><span class="p">)</span>
+<span class="n">repo</span> <span class="o">=</span> <span class="n">Repo</span><span class="p">(</span><span class="s2">&quot;~/Development/git-python.git&quot;</span><span class="p">)</span>
+<span class="n">repo</span> <span class="o">=</span> <span class="n">Repo</span><span class="p">(</span><span class="s2">&quot;$REPOSITORIES/Development/git-python.git&quot;</span><span class="p">)</span>
+<span class="n">repo</span> <span class="o">=</span> <span class="n">Repo</span><span class="p">(</span><span class="sa">R</span><span class="s2">&quot;C:\Users\mtrier\Development\git-python\.git&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul>
+<li><p>In <em>Cygwin</em>, <cite>path</cite> may be a <code class="docutils literal notranslate"><span class="pre">cygdrive/...</span></code> prefixed path.</p></li>
+<li><p>If <cite>path</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> or an empty string, <span class="target" id="index-0"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">GIT_DIR</span></code> is used. If
+that environment variable is absent or empty, the current directory is
+used.</p></li>
+</ul>
+</p></li>
+<li><p><strong>odbt</strong> – Object DataBase type - a type which is constructed by providing the
+directory containing the database objects, i.e. <code class="docutils literal notranslate"><span class="pre">.git/objects</span></code>. It will be
+used to access all object data.</p></li>
+<li><p><strong>search_parent_directories</strong> – <p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, all parent directories will be searched for a valid repo as
+well.</p>
+<p>Please note that this was the default behaviour in older versions of
+GitPython, which is considered a bug though.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>git.exc.InvalidGitRepositoryError</strong> – </p></li>
+<li><p><strong>git.exc.NoSuchPathError</strong> – </p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#git_utils.Repo" title="git_utils.Repo"><code class="xref py py-class docutils literal notranslate"><span class="pre">Repo</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="git_utils.Repo._clone">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">git</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Git</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PathLike</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PathLike</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">odb_default_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><span class="pre">GitCmdObjectDB</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">progress</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'RemoteProgress'</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="s"><span class="pre">'UpdateProgress'</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'RemoteProgress'</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multi_options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_unsafe_protocols</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_unsafe_options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#git_utils.Repo" title="git_utils.Repo"><span class="pre">Repo</span></a></span></span><a class="reference internal" href="_modules/git/repo/base.html#Repo._clone"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.Repo._clone" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="git_utils.Repo._common_dir">
+<span class="sig-name descname"><span class="pre">_common_dir</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></em><a class="headerlink" href="#git_utils.Repo._common_dir" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="git_utils.Repo._config_reader">
+<span class="sig-name descname"><span class="pre">_config_reader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'system'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'global'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'user'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'repository'</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">git_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">GitConfigParser</span></span></span><a class="reference internal" href="_modules/git/repo/base.html#Repo._config_reader"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.Repo._config_reader" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="git_utils.Repo._get_alternates">
+<span class="sig-name descname"><span class="pre">_get_alternates</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/git/repo/base.html#Repo._get_alternates"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.Repo._get_alternates" title="Link to this definition">¶</a></dt>
+<dd><p>The list of alternates for this repo from which objects can be retrieved.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of strings being pathnames of alternates</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="git_utils.Repo._get_config_path">
+<span class="sig-name descname"><span class="pre">_get_config_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'system'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'global'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'user'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'repository'</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">git_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/git/repo/base.html#Repo._get_config_path"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.Repo._get_config_path" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="git_utils.Repo._get_untracked_files">
+<span class="sig-name descname"><span class="pre">_get_untracked_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/git/repo/base.html#Repo._get_untracked_files"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.Repo._get_untracked_files" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="git_utils.Repo._set_alternates">
+<span class="sig-name descname"><span class="pre">_set_alternates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/git/repo/base.html#Repo._set_alternates"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.Repo._set_alternates" title="Link to this definition">¶</a></dt>
+<dd><p>Set the alternates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>alts</strong> – The array of string paths representing the alternates at which git should
+look for objects, i.e. <code class="docutils literal notranslate"><span class="pre">/home/user/repo/.git/objects</span></code>.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>git.exc.NoSuchPathError</strong> – </p>
+</dd>
+<dt class="field-odd">Note<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The method does not check for the existence of the paths in <cite>alts</cite>, as the
+caller is responsible.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="git_utils.Repo._to_full_tag_path">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_to_full_tag_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/git/repo/base.html#Repo._to_full_tag_path"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.Repo._to_full_tag_path" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="git_utils.Repo._working_tree_dir">
+<span class="sig-name descname"><span class="pre">_working_tree_dir</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#git_utils.Repo._working_tree_dir" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="git_utils.Repo.active_branch">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">active_branch</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Head</span></em><a class="headerlink" href="#git_utils.Repo.active_branch" title="Link to this definition">¶</a></dt>
+<dd><p>The name of the currently active branch.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>TypeError</strong> – If HEAD is detached.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Head</span></code> to the active branch</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="git_utils.Repo.alternates">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">alternates</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#git_utils.Repo.alternates" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieve a list of alternates paths or set a list paths to be used as alternates</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="git_utils.Repo.archive">
+<span class="sig-name descname"><span class="pre">archive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ostream</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">TextIO</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">BinaryIO</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">treeish</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#git_utils.Repo" title="git.repo.base.Repo"><span class="pre">Repo</span></a></span></span><a class="reference internal" href="_modules/git/repo/base.html#Repo.archive"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.Repo.archive" title="Link to this definition">¶</a></dt>
+<dd><p>Archive the tree at the given revision.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ostream</strong> – File-compatible stream object to which the archive will be written as bytes.</p></li>
+<li><p><strong>treeish</strong> – The treeish name/id, defaults to active branch.</p></li>
+<li><p><strong>prefix</strong> – The optional prefix to prepend to each filename in the archive.</p></li>
+<li><p><strong>kwargs</strong> – <p>Additional arguments passed to <em class="manpage">git-archive(1)</em>:</p>
+<ul>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">format</span></code> argument to define the kind of format. Use specialized
+ostreams to write any format supported by Python.</p></li>
+<li><p>You may specify the special <code class="docutils literal notranslate"><span class="pre">path</span></code> keyword, which may either be a
+repository-relative path to a directory or file to place into the archive,
+or a list or tuple of multiple paths.</p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#git_utils.GitCommandError" title="git.exc.GitCommandError"><strong>git.exc.GitCommandError</strong></a> – If something went wrong.</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>self</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="git_utils.Repo.bare">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bare</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#git_utils.Repo.bare" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if the repository is bare</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="git_utils.Repo.blame">
+<span class="sig-name descname"><span class="pre">blame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rev</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">HEAD</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">incremental</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rev_opts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Commit</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><span class="pre">BlameEntry</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference internal" href="_modules/git/repo/base.html#Repo.blame"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.Repo.blame" title="Link to this definition">¶</a></dt>
+<dd><p>The blame information for the given file at the given revision.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rev</strong> – Revision specifier. If <code class="docutils literal notranslate"><span class="pre">None</span></code>, the blame will include all the latest
+uncommitted changes. Otherwise, anything successfully parsed by
+<em class="manpage">git-rev-parse(1)</em> is a valid option.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>list: [git.Commit, list: [&lt;line&gt;]]</p>
+<p>A list of lists associating a <code class="xref py py-class docutils literal notranslate"><span class="pre">Commit</span></code> object
+with a list of lines that changed within the given commit. The
+<code class="xref py py-class docutils literal notranslate"><span class="pre">Commit</span></code> objects will be given in order of
+appearance.</p>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="git_utils.Repo.blame_incremental">
+<span class="sig-name descname"><span class="pre">blame_incremental</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rev</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">HEAD</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><span class="pre">BlameEntry</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/git/repo/base.html#Repo.blame_incremental"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.Repo.blame_incremental" title="Link to this definition">¶</a></dt>
+<dd><p>Iterator for blame information for the given file at the given revision.</p>
+<p>Unlike <a class="reference internal" href="#git_utils.Repo.blame" title="git_utils.Repo.blame"><code class="xref py py-meth docutils literal notranslate"><span class="pre">blame()</span></code></a>, this does not return the actual file’s contents, only a
+stream of <code class="xref py py-class docutils literal notranslate"><span class="pre">BlameEntry</span></code> tuples.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rev</strong> – Revision specifier. If <code class="docutils literal notranslate"><span class="pre">None</span></code>, the blame will include all the latest
+uncommitted changes. Otherwise, anything successfully parsed by
+<em class="manpage">git-rev-parse(1)</em> is a valid option.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Lazy iterator of <code class="xref py py-class docutils literal notranslate"><span class="pre">BlameEntry</span></code> tuples, where the commit indicates the
+commit to blame for the line, and range indicates a span of line numbers in
+the resulting file.</p>
+</dd>
+</dl>
+<p>If you combine all line number ranges outputted by this command, you should get
+a continuous range spanning all line numbers in the file.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="git_utils.Repo.branches">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">branches</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">IterableList</span><span class="p"><span class="pre">[</span></span><span class="pre">Head</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#git_utils.Repo.branches" title="Link to this definition">¶</a></dt>
+<dd><p>A list of <code class="xref py py-class docutils literal notranslate"><span class="pre">Head</span></code> objects representing the branch heads
+in this repo.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">git.IterableList(Head,</span> <span class="pre">...)</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="git_utils.Repo.clone">
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">progress</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multi_options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_unsafe_protocols</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_unsafe_options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#git_utils.Repo" title="git.repo.base.Repo"><span class="pre">Repo</span></a></span></span><a class="reference internal" href="_modules/git/repo/base.html#Repo.clone"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.Repo.clone" title="Link to this definition">¶</a></dt>
+<dd><p>Create a clone from this repository.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> – The full path of the new repo (traditionally ends with <code class="docutils literal notranslate"><span class="pre">./&lt;name&gt;.git</span></code>).</p></li>
+<li><p><strong>progress</strong> – See <code class="xref py py-meth docutils literal notranslate"><span class="pre">Remote.push</span></code>.</p></li>
+<li><p><strong>multi_options</strong> – <p>A list of <em class="manpage">git-clone(1)</em> options that can be provided multiple
+times.</p>
+<p>One option per list item which is passed exactly as specified to clone.
+For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+    <span class="s2">&quot;--config core.filemode=false&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;--config core.ignorecase&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;--recurse-submodule=repo1_path&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;--recurse-submodule=repo2_path&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</p></li>
+<li><p><strong>allow_unsafe_protocols</strong> – Allow unsafe protocols to be used, like <code class="docutils literal notranslate"><span class="pre">ext</span></code>.</p></li>
+<li><p><strong>allow_unsafe_options</strong> – Allow unsafe options to be used, like <code class="docutils literal notranslate"><span class="pre">--upload-pack</span></code>.</p></li>
+<li><p><strong>kwargs</strong> – <ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">odbt</span></code> = ObjectDatabase Type, allowing to determine the object database
+implementation used by the returned <a class="reference internal" href="#git_utils.Repo" title="git_utils.Repo"><code class="xref py py-class docutils literal notranslate"><span class="pre">Repo</span></code></a> instance.</p></li>
+<li><p>All remaining keyword arguments are given to the <em class="manpage">git-clone(1)</em>
+command.</p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#git_utils.Repo" title="git_utils.Repo"><code class="xref py py-class docutils literal notranslate"><span class="pre">Repo</span></code></a> (the newly cloned repo)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="git_utils.Repo.clone_from">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">clone_from</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">progress</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multi_options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_unsafe_protocols</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_unsafe_options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#git_utils.Repo" title="git.repo.base.Repo"><span class="pre">Repo</span></a></span></span><a class="reference internal" href="_modules/git/repo/base.html#Repo.clone_from"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.Repo.clone_from" title="Link to this definition">¶</a></dt>
+<dd><p>Create a clone from the given URL.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> – Valid git url, see: <a class="reference external" href="https://git-scm.com/docs/git-clone#URLS">https://git-scm.com/docs/git-clone#URLS</a></p></li>
+<li><p><strong>to_path</strong> – Path to which the repository should be cloned to.</p></li>
+<li><p><strong>progress</strong> – See <code class="xref py py-meth docutils literal notranslate"><span class="pre">Remote.push</span></code>.</p></li>
+<li><p><strong>env</strong> – <p>Optional dictionary containing the desired environment variables.</p>
+<p>Note: Provided variables will be used to update the execution environment
+for <code class="docutils literal notranslate"><span class="pre">git</span></code>. If some variable is not specified in <cite>env</cite> and is defined in
+<code class="xref py py-attr docutils literal notranslate"><span class="pre">os.environ</span></code>, value from <code class="xref py py-attr docutils literal notranslate"><span class="pre">os.environ</span></code> will be used. If you want
+to unset some variable, consider providing empty string as its value.</p>
+</p></li>
+<li><p><strong>multi_options</strong> – See the <a class="reference internal" href="#git_utils.Repo.clone" title="git_utils.Repo.clone"><code class="xref py py-meth docutils literal notranslate"><span class="pre">clone()</span></code></a> method.</p></li>
+<li><p><strong>allow_unsafe_protocols</strong> – Allow unsafe protocols to be used, like <code class="docutils literal notranslate"><span class="pre">ext</span></code>.</p></li>
+<li><p><strong>allow_unsafe_options</strong> – Allow unsafe options to be used, like <code class="docutils literal notranslate"><span class="pre">--upload-pack</span></code>.</p></li>
+<li><p><strong>kwargs</strong> – See the <a class="reference internal" href="#git_utils.Repo.clone" title="git_utils.Repo.clone"><code class="xref py py-meth docutils literal notranslate"><span class="pre">clone()</span></code></a> method.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#git_utils.Repo" title="git_utils.Repo"><code class="xref py py-class docutils literal notranslate"><span class="pre">Repo</span></code></a> instance pointing to the cloned directory.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="git_utils.Repo.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/git/repo/base.html#Repo.close"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.Repo.close" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="git_utils.Repo.commit">
+<span class="sig-name descname"><span class="pre">commit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rev</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Commit_ish</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Commit</span></span></span><a class="reference internal" href="_modules/git/repo/base.html#Repo.commit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.Repo.commit" title="Link to this definition">¶</a></dt>
+<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">Commit</span></code> object for the specified revision.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rev</strong> – Revision specifier, see <em class="manpage">git-rev-parse(1)</em> for viable options.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Commit</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="git_utils.Repo.common_dir">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">common_dir</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#git_utils.Repo.common_dir" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The git dir that holds everything except possibly HEAD, FETCH_HEAD,
+ORIG_HEAD, COMMIT_EDITMSG, index, and logs/.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="git_utils.Repo.config_level">
+<span class="sig-name descname"><span class="pre">config_level</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'system'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'user'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'global'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'repository'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('system',</span> <span class="pre">'user',</span> <span class="pre">'global',</span> <span class="pre">'repository')</span></em><a class="headerlink" href="#git_utils.Repo.config_level" title="Link to this definition">¶</a></dt>
+<dd><p>Represents the configuration level of a configuration file.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="git_utils.Repo.config_reader">
+<span class="sig-name descname"><span class="pre">config_reader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'system'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'global'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'user'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'repository'</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">GitConfigParser</span></span></span><a class="reference internal" href="_modules/git/repo/base.html#Repo.config_reader"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.Repo.config_reader" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p><code class="xref py py-class docutils literal notranslate"><span class="pre">GitConfigParser</span></code> allowing to read the full git
+configuration, but not to write it.</p>
+<p>The configuration will include values from the system, user and repository
+configuration files.</p>
+</p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>config_level</strong> – For possible values, see the <a class="reference internal" href="#git_utils.Repo.config_writer" title="git_utils.Repo.config_writer"><code class="xref py py-meth docutils literal notranslate"><span class="pre">config_writer()</span></code></a> method. If <code class="docutils literal notranslate"><span class="pre">None</span></code>, all
+applicable levels will be used. Specify a level in case you know which file
+you wish to read to prevent reading multiple files.</p>
+</dd>
+<dt class="field-odd">Note<span class="colon">:</span></dt>
+<dd class="field-odd"><p>On Windows, system configuration cannot currently be read as the path is
+unknown, instead the global path will be used.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="git_utils.Repo.config_writer">
+<span class="sig-name descname"><span class="pre">config_writer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'system'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'global'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'user'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'repository'</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'repository'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">GitConfigParser</span></span></span><a class="reference internal" href="_modules/git/repo/base.html#Repo.config_writer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.Repo.config_writer" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A <code class="xref py py-class docutils literal notranslate"><span class="pre">GitConfigParser</span></code> allowing to write values of the
+specified configuration file level. Config writers should be retrieved, used
+to change the configuration, and written right away as they will lock the
+configuration file in question and prevent other’s to write it.</p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>config_level</strong> – <p>One of the following values:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;system&quot;</span></code> = system wide configuration file</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;global&quot;</span></code> = user level configuration file</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;`repository&quot;</span></code> = configuration file for this repository only</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="git_utils.Repo.create_head">
+<span class="sig-name descname"><span class="pre">create_head</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PathLike</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">commit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'SymbolicReference'</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="s"><span class="pre">'str'</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'HEAD'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logmsg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Head</span></span></span><a class="reference internal" href="_modules/git/repo/base.html#Repo.create_head"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.Repo.create_head" title="Link to this definition">¶</a></dt>
+<dd><p>Create a new head within the repository.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note<span class="colon">:</span></dt>
+<dd class="field-odd"><p>For more documentation, please see the
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">Head.create</span></code> method.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Newly created <code class="xref py py-class docutils literal notranslate"><span class="pre">Head</span></code> Reference.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="git_utils.Repo.create_remote">
+<span class="sig-name descname"><span class="pre">create_remote</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Remote</span></span></span><a class="reference internal" href="_modules/git/repo/base.html#Repo.create_remote"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.Repo.create_remote" title="Link to this definition">¶</a></dt>
+<dd><p>Create a new remote.</p>
+<p>For more information, please see the documentation of the
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">Remote.create</span></code> method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Remote</span></code> reference</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="git_utils.Repo.create_submodule">
+<span class="sig-name descname"><span class="pre">create_submodule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Submodule</span></span></span><a class="reference internal" href="_modules/git/repo/base.html#Repo.create_submodule"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.Repo.create_submodule" title="Link to this definition">¶</a></dt>
+<dd><p>Create a new submodule.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note<span class="colon">:</span></dt>
+<dd class="field-odd"><p>For a description of the applicable parameters, see the documentation of
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">Submodule.add</span></code>.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The created submodule.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="git_utils.Repo.create_tag">
+<span class="sig-name descname"><span class="pre">create_tag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PathLike</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="s"><span class="pre">'SymbolicReference'</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'HEAD'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">TagReference</span></span></span><a class="reference internal" href="_modules/git/repo/base.html#Repo.create_tag"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.Repo.create_tag" title="Link to this definition">¶</a></dt>
+<dd><p>Create a new tag reference.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note<span class="colon">:</span></dt>
+<dd class="field-odd"><p>For more documentation, please see the
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">TagReference.create</span></code> method.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">TagReference</span></code> object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="git_utils.Repo.currently_rebasing_on">
+<span class="sig-name descname"><span class="pre">currently_rebasing_on</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Commit</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference internal" href="_modules/git/repo/base.html#Repo.currently_rebasing_on"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.Repo.currently_rebasing_on" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>The commit which is currently being replayed while rebasing.</p>
+<p><code class="docutils literal notranslate"><span class="pre">None</span></code> if we are not currently rebasing.</p>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="git_utils.Repo.daemon_export">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">daemon_export</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#git_utils.Repo.daemon_export" title="Link to this definition">¶</a></dt>
+<dd><p>If True, git-daemon may export this repository</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="git_utils.Repo.delete_head">
+<span class="sig-name descname"><span class="pre">delete_head</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">heads</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Head</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/git/repo/base.html#Repo.delete_head"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.Repo.delete_head" title="Link to this definition">¶</a></dt>
+<dd><p>Delete the given heads.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>kwargs</strong> – Additional keyword arguments to be passed to <em class="manpage">git-branch(1)</em>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="git_utils.Repo.delete_remote">
+<span class="sig-name descname"><span class="pre">delete_remote</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">remote</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Remote</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/git/repo/base.html#Repo.delete_remote"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.Repo.delete_remote" title="Link to this definition">¶</a></dt>
+<dd><p>Delete the given remote.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="git_utils.Repo.delete_tag">
+<span class="sig-name descname"><span class="pre">delete_tag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">tags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">TagReference</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/git/repo/base.html#Repo.delete_tag"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.Repo.delete_tag" title="Link to this definition">¶</a></dt>
+<dd><p>Delete the given tag references.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="git_utils.Repo.description">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">description</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#git_utils.Repo.description" title="Link to this definition">¶</a></dt>
+<dd><p>the project’s description</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="git_utils.Repo.git">
+<span class="sig-name descname"><span class="pre">git</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#git_utils.Repo.git" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="git_utils.Repo.git_dir">
+<span class="sig-name descname"><span class="pre">git_dir</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#git_utils.Repo.git_dir" title="Link to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">.git</span></code> repository directory.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="git_utils.Repo.has_separate_working_tree">
+<span class="sig-name descname"><span class="pre">has_separate_working_tree</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/git/repo/base.html#Repo.has_separate_working_tree"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.Repo.has_separate_working_tree" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if our <a class="reference internal" href="#git_utils.Repo.git_dir" title="git_utils.Repo.git_dir"><code class="xref py py-attr docutils literal notranslate"><span class="pre">git_dir</span></code></a> is not at the root of our
+<a class="reference internal" href="#git_utils.Repo.working_tree_dir" title="git_utils.Repo.working_tree_dir"><code class="xref py py-attr docutils literal notranslate"><span class="pre">working_tree_dir</span></code></a>, but a <code class="docutils literal notranslate"><span class="pre">.git</span></code> file with a platform-agnostic
+symbolic link. Our <a class="reference internal" href="#git_utils.Repo.git_dir" title="git_utils.Repo.git_dir"><code class="xref py py-attr docutils literal notranslate"><span class="pre">git_dir</span></code></a> will be wherever the <code class="docutils literal notranslate"><span class="pre">.git</span></code> file points
+to.</p>
+</dd>
+<dt class="field-even">Note<span class="colon">:</span></dt>
+<dd class="field-even"><p>Bare repositories will always return <code class="docutils literal notranslate"><span class="pre">False</span></code> here.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="git_utils.Repo.head">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">head</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">HEAD</span></em><a class="headerlink" href="#git_utils.Repo.head" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">HEAD</span></code> object pointing to the current head reference</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="git_utils.Repo.heads">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">heads</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">IterableList</span><span class="p"><span class="pre">[</span></span><span class="pre">Head</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#git_utils.Repo.heads" title="Link to this definition">¶</a></dt>
+<dd><p>A list of <code class="xref py py-class docutils literal notranslate"><span class="pre">Head</span></code> objects representing the branch heads
+in this repo.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">git.IterableList(Head,</span> <span class="pre">...)</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="git_utils.Repo.ignored">
+<span class="sig-name descname"><span class="pre">ignored</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">paths</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/git/repo/base.html#Repo.ignored"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.Repo.ignored" title="Link to this definition">¶</a></dt>
+<dd><p>Checks if paths are ignored via <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>.</p>
+<p>This does so using the <em class="manpage">git-check-ignore(1)</em> method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>paths</strong> – List of paths to check whether they are ignored or not.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Subset of those paths which are ignored</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="git_utils.Repo.index">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">index</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">IndexFile</span></em><a class="headerlink" href="#git_utils.Repo.index" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A <code class="xref py py-class docutils literal notranslate"><span class="pre">IndexFile</span></code> representing this repository’s index.</p>
+</dd>
+<dt class="field-even">Note<span class="colon">:</span></dt>
+<dd class="field-even"><p>This property can be expensive, as the returned
+<code class="xref py py-class docutils literal notranslate"><span class="pre">IndexFile</span></code> will be reinitialized.
+It is recommended to reuse the object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="git_utils.Repo.init">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">~os.PathLike[str]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mkdir:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">odbt:</span> <span class="pre">~typing.Type[~git.db.GitCmdObjectDB]</span> <span class="pre">=</span> <span class="pre">&lt;class</span> <span class="pre">'git.db.GitCmdObjectDB'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expand_vars:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs:</span> <span class="pre">~typing.Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#git_utils.Repo" title="git.repo.base.Repo"><span class="pre">Repo</span></a></span></span><a class="reference internal" href="_modules/git/repo/base.html#Repo.init"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.Repo.init" title="Link to this definition">¶</a></dt>
+<dd><p>Initialize a git repository at the given path if specified.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> – The full path to the repo (traditionally ends with <code class="docutils literal notranslate"><span class="pre">/&lt;name&gt;.git</span></code>). Or
+<code class="docutils literal notranslate"><span class="pre">None</span></code>, in which case the repository will be created in the current
+working directory.</p></li>
+<li><p><strong>mkdir</strong> – If specified, will create the repository directory if it doesn’t already
+exist. Creates the directory with a mode=0755.
+Only effective if a path is explicitly given.</p></li>
+<li><p><strong>odbt</strong> – Object DataBase type - a type which is constructed by providing the
+directory containing the database objects, i.e. <code class="docutils literal notranslate"><span class="pre">.git/objects</span></code>. It will be
+used to access all object data.</p></li>
+<li><p><strong>expand_vars</strong> – If specified, environment variables will not be escaped. This can lead to
+information disclosure, allowing attackers to access the contents of
+environment variables.</p></li>
+<li><p><strong>kwargs</strong> – Keyword arguments serving as additional options to the
+<em class="manpage">git-init(1)</em> command.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#git_utils.Repo" title="git_utils.Repo"><code class="xref py py-class docutils literal notranslate"><span class="pre">Repo</span></code></a> (the newly created repo)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="git_utils.Repo.is_ancestor">
+<span class="sig-name descname"><span class="pre">is_ancestor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ancestor_rev</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Commit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rev</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Commit</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/git/repo/base.html#Repo.is_ancestor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.Repo.is_ancestor" title="Link to this definition">¶</a></dt>
+<dd><p>Check if a commit is an ancestor of another.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ancestor_rev</strong> – Rev which should be an ancestor.</p></li>
+<li><p><strong>rev</strong> – Rev to test against <cite>ancestor_rev</cite>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if <cite>ancestor_rev</cite> is an ancestor to <cite>rev</cite>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="git_utils.Repo.is_dirty">
+<span class="sig-name descname"><span class="pre">is_dirty</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">working_tree</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">untracked_files</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">submodules</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/git/repo/base.html#Repo.is_dirty"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.Repo.is_dirty" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if the repository is considered dirty. By default it will react
+like a <em class="manpage">git-status(1)</em> without untracked files, hence it is dirty
+if the index or the working copy have changes.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="git_utils.Repo.is_valid_object">
+<span class="sig-name descname"><span class="pre">is_valid_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">object_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/git/repo/base.html#Repo.is_valid_object"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.Repo.is_valid_object" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="git_utils.Repo.iter_commits">
+<span class="sig-name descname"><span class="pre">iter_commits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rev</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Commit</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="s"><span class="pre">'SymbolicReference'</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">paths</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PathLike</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">PathLike</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><span class="pre">Commit</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/git/repo/base.html#Repo.iter_commits"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.Repo.iter_commits" title="Link to this definition">¶</a></dt>
+<dd><p>An iterator of <code class="xref py py-class docutils literal notranslate"><span class="pre">Commit</span></code> objects representing the
+history of a given ref/commit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rev</strong> – Revision specifier, see <em class="manpage">git-rev-parse(1)</em> for viable options.
+If <code class="docutils literal notranslate"><span class="pre">None</span></code>, the active branch will be used.</p></li>
+<li><p><strong>paths</strong> – An optional path or a list of paths. If set, only commits that include the
+path or paths will be returned.</p></li>
+<li><p><strong>kwargs</strong> – Arguments to be passed to <em class="manpage">git-rev-list(1)</em>.
+Common ones are <code class="docutils literal notranslate"><span class="pre">max_count</span></code> and <code class="docutils literal notranslate"><span class="pre">skip</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Note<span class="colon">:</span></dt>
+<dd class="field-even"><p>To receive only commits between two named revisions, use the
+<code class="docutils literal notranslate"><span class="pre">&quot;revA...revB&quot;</span></code> revision specifier.</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Iterator of <code class="xref py py-class docutils literal notranslate"><span class="pre">Commit</span></code> objects</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="git_utils.Repo.iter_submodules">
+<span class="sig-name descname"><span class="pre">iter_submodules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><span class="pre">Submodule</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/git/repo/base.html#Repo.iter_submodules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.Repo.iter_submodules" title="Link to this definition">¶</a></dt>
+<dd><p>An iterator yielding Submodule instances.</p>
+<p>See the <cite>~git.objects.util.Traversable</cite> interface for a description of <cite>args</cite>
+and <cite>kwargs</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Iterator</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="git_utils.Repo.iter_trees">
+<span class="sig-name descname"><span class="pre">iter_trees</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'Tree'</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/git/repo/base.html#Repo.iter_trees"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.Repo.iter_trees" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Iterator yielding <code class="xref py py-class docutils literal notranslate"><span class="pre">Tree</span></code> objects</p>
+</dd>
+<dt class="field-even">Note<span class="colon">:</span></dt>
+<dd class="field-even"><p>Accepts all arguments known to the <a class="reference internal" href="#git_utils.Repo.iter_commits" title="git_utils.Repo.iter_commits"><code class="xref py py-meth docutils literal notranslate"><span class="pre">iter_commits()</span></code></a> method.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="git_utils.Repo.merge_base">
+<span class="sig-name descname"><span class="pre">merge_base</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">rev</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Commit</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/git/repo/base.html#Repo.merge_base"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.Repo.merge_base" title="Link to this definition">¶</a></dt>
+<dd><p>Find the closest common ancestor for the given revision
+(<code class="xref py py-class docutils literal notranslate"><span class="pre">Commit</span></code>s, <code class="xref py py-class docutils literal notranslate"><span class="pre">Tag</span></code>s,
+<code class="xref py py-class docutils literal notranslate"><span class="pre">Reference</span></code>s, etc.).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rev</strong> – At least two revs to find the common ancestor for.</p></li>
+<li><p><strong>kwargs</strong> – Additional arguments to be passed to the <code class="docutils literal notranslate"><span class="pre">repo.git.merge_base()</span></code> command
+which does all the work.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of <code class="xref py py-class docutils literal notranslate"><span class="pre">Commit</span></code> objects. If <code class="docutils literal notranslate"><span class="pre">--all</span></code> was
+not passed as a keyword argument, the list will have at max one
+<code class="xref py py-class docutils literal notranslate"><span class="pre">Commit</span></code>, or is empty if no common merge base
+exists.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If fewer than two revisions are provided.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="git_utils.Repo.re_author_committer_start">
+<span class="sig-name descname"><span class="pre">re_author_committer_start</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">re.compile('^(author|committer)')</span></em><a class="headerlink" href="#git_utils.Repo.re_author_committer_start" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="git_utils.Repo.re_envvars">
+<span class="sig-name descname"><span class="pre">re_envvars</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">re.compile('(\\$(\\{\\s?)?[a-zA-Z_]\\w*(\\}\\s?)?|%\\s?[a-zA-Z_]\\w*\\s?%)')</span></em><a class="headerlink" href="#git_utils.Repo.re_envvars" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="git_utils.Repo.re_hexsha_only">
+<span class="sig-name descname"><span class="pre">re_hexsha_only</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">re.compile('^[0-9A-Fa-f]{40}$')</span></em><a class="headerlink" href="#git_utils.Repo.re_hexsha_only" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="git_utils.Repo.re_hexsha_shortened">
+<span class="sig-name descname"><span class="pre">re_hexsha_shortened</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">re.compile('^[0-9A-Fa-f]{4,40}$')</span></em><a class="headerlink" href="#git_utils.Repo.re_hexsha_shortened" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="git_utils.Repo.re_tab_full_line">
+<span class="sig-name descname"><span class="pre">re_tab_full_line</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">re.compile('^\\t(.*)$')</span></em><a class="headerlink" href="#git_utils.Repo.re_tab_full_line" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="git_utils.Repo.re_whitespace">
+<span class="sig-name descname"><span class="pre">re_whitespace</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">re.compile('\\s+')</span></em><a class="headerlink" href="#git_utils.Repo.re_whitespace" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="git_utils.Repo.references">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">references</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">IterableList</span><span class="p"><span class="pre">[</span></span><span class="pre">Reference</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#git_utils.Repo.references" title="Link to this definition">¶</a></dt>
+<dd><p>A list of <code class="xref py py-class docutils literal notranslate"><span class="pre">Reference</span></code> objects representing tags,
+heads and remote references.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">git.IterableList(Reference,</span> <span class="pre">...)</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="git_utils.Repo.refs">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">refs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">IterableList</span><span class="p"><span class="pre">[</span></span><span class="pre">Reference</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#git_utils.Repo.refs" title="Link to this definition">¶</a></dt>
+<dd><p>A list of <code class="xref py py-class docutils literal notranslate"><span class="pre">Reference</span></code> objects representing tags,
+heads and remote references.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">git.IterableList(Reference,</span> <span class="pre">...)</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="git_utils.Repo.remote">
+<span class="sig-name descname"><span class="pre">remote</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'origin'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Remote</span></span></span><a class="reference internal" href="_modules/git/repo/base.html#Repo.remote"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.Repo.remote" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The remote with the specified name</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If no remote with such a name exists.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="git_utils.Repo.remotes">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">remotes</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">IterableList</span><span class="p"><span class="pre">[</span></span><span class="pre">Remote</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#git_utils.Repo.remotes" title="Link to this definition">¶</a></dt>
+<dd><p>A list of <code class="xref py py-class docutils literal notranslate"><span class="pre">Remote</span></code> objects allowing to access and
+manipulate remotes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">git.IterableList(Remote,</span> <span class="pre">...)</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="git_utils.Repo.rev_parse">
+<span class="sig-name descname"><span class="pre">rev_parse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rev</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">AnyGitObject</span></span></span><a class="headerlink" href="#git_utils.Repo.rev_parse" title="Link to this definition">¶</a></dt>
+<dd><p>Parse a revision string. Like <em class="manpage">git-rev-parse(1)</em>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p><cite>~git.objects.base.Object</cite> at the given revision.</p>
+<p>This may be any type of git object:</p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Commit</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">TagObject</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Tree</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Blob</span></code></p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>rev</strong> – <em class="manpage">git-rev-parse(1)</em>-compatible revision specification as string.
+Please see <em class="manpage">git-rev-parse(1)</em> for details.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>gitdb.exc.BadObject</strong> – If the given revision could not be found.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>rev</cite> couldn’t be parsed.</p></li>
+<li><p><strong>IndexError</strong> – If an invalid reflog index is specified.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="git_utils.Repo.submodule">
+<span class="sig-name descname"><span class="pre">submodule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Submodule</span></span></span><a class="reference internal" href="_modules/git/repo/base.html#Repo.submodule"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.Repo.submodule" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The submodule with the given name</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If no such submodule exists.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="git_utils.Repo.submodule_update">
+<span class="sig-name descname"><span class="pre">submodule_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><span class="pre">Submodule</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/git/repo/base.html#Repo.submodule_update"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.Repo.submodule_update" title="Link to this definition">¶</a></dt>
+<dd><p>Update the submodules, keeping the repository consistent as it will
+take the previous state into consideration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note<span class="colon">:</span></dt>
+<dd class="field-odd"><p>For more information, please see the documentation of
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">RootModule.update</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="git_utils.Repo.submodules">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">submodules</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">IterableList</span><span class="p"><span class="pre">[</span></span><span class="pre">Submodule</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#git_utils.Repo.submodules" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>git.IterableList(Submodule, …) of direct submodules available from the
+current head</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="git_utils.Repo.tag">
+<span class="sig-name descname"><span class="pre">tag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">TagReference</span></span></span><a class="reference internal" href="_modules/git/repo/base.html#Repo.tag"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.Repo.tag" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">TagReference</span></code> object, reference pointing to a
+<code class="xref py py-class docutils literal notranslate"><span class="pre">Commit</span></code> or tag</p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>path</strong> – Path to the tag reference, e.g. <code class="docutils literal notranslate"><span class="pre">0.1.5</span></code> or <code class="docutils literal notranslate"><span class="pre">tags/0.1.5</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="git_utils.Repo.tags">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tags</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">IterableList</span><span class="p"><span class="pre">[</span></span><span class="pre">TagReference</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#git_utils.Repo.tags" title="Link to this definition">¶</a></dt>
+<dd><p>A list of <code class="xref py py-class docutils literal notranslate"><span class="pre">TagReference</span></code> objects that are available in
+this repo.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">git.IterableList(TagReference,</span> <span class="pre">...)</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="git_utils.Repo.tree">
+<span class="sig-name descname"><span class="pre">tree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rev</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tree_ish</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tree</span></span></span><a class="reference internal" href="_modules/git/repo/base.html#Repo.tree"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.Repo.tree" title="Link to this definition">¶</a></dt>
+<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">Tree</span></code> object for the given tree-ish revision.</p>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">repo</span><span class="o">.</span><span class="n">tree</span><span class="p">(</span><span class="n">repo</span><span class="o">.</span><span class="n">heads</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rev</strong> – A revision pointing to a Treeish (being a commit or tree).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Tree</span></code></p>
+</dd>
+<dt class="field-odd">Note<span class="colon">:</span></dt>
+<dd class="field-odd"><p>If you need a non-root level tree, find it by iterating the root tree.
+Otherwise it cannot know about its path relative to the repository root and
+subsequent operations might have unexpected results.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="git_utils.Repo.unsafe_git_clone_options">
+<span class="sig-name descname"><span class="pre">unsafe_git_clone_options</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['--upload-pack',</span> <span class="pre">'-u',</span> <span class="pre">'--config',</span> <span class="pre">'-c']</span></em><a class="headerlink" href="#git_utils.Repo.unsafe_git_clone_options" title="Link to this definition">¶</a></dt>
+<dd><p>Options to <em class="manpage">git-clone(1)</em> that allow arbitrary commands to be executed.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">--upload-pack</span></code>/<code class="docutils literal notranslate"><span class="pre">-u</span></code> option allows users to execute arbitrary commands
+directly:
+<a class="reference external" href="https://git-scm.com/docs/git-clone#Documentation/git-clone.txt---upload-packltupload-packgt">https://git-scm.com/docs/git-clone#Documentation/git-clone.txt—upload-packltupload-packgt</a></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">--config</span></code>/<code class="docutils literal notranslate"><span class="pre">-c</span></code> option allows users to override configuration variables like
+<code class="docutils literal notranslate"><span class="pre">protocol.allow</span></code> and <code class="docutils literal notranslate"><span class="pre">core.gitProxy</span></code> to execute arbitrary commands:
+<a class="reference external" href="https://git-scm.com/docs/git-clone#Documentation/git-clone.txt---configltkeygtltvaluegt">https://git-scm.com/docs/git-clone#Documentation/git-clone.txt—configltkeygtltvaluegt</a></p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="git_utils.Repo.untracked_files">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">untracked_files</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#git_utils.Repo.untracked_files" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>list(str,…)</p>
+<p>Files currently untracked as they have not been staged yet. Paths are
+relative to the current working directory of the git command.</p>
+</p>
+</dd>
+<dt class="field-even">Note<span class="colon">:</span></dt>
+<dd class="field-even"><p>Ignored files will not appear here, i.e. files mentioned in <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>.</p>
+</dd>
+<dt class="field-odd">Note<span class="colon">:</span></dt>
+<dd class="field-odd"><p>This property is expensive, as no cache is involved. To process the result,
+please consider caching it yourself.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="git_utils.Repo.working_dir">
+<span class="sig-name descname"><span class="pre">working_dir</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#git_utils.Repo.working_dir" title="Link to this definition">¶</a></dt>
+<dd><p>The working directory of the git command.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="git_utils.Repo.working_tree_dir">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">working_tree_dir</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#git_utils.Repo.working_tree_dir" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The working tree directory of our git repository.
+If this is a bare repository, <code class="docutils literal notranslate"><span class="pre">None</span></code> is returned.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="git_utils.add_file">
+<span class="sig-prename descclassname"><span class="pre">git_utils.</span></span><span class="sig-name descname"><span class="pre">add_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repo</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#git_utils.Repo" title="git.repo.base.Repo"><span class="pre">Repo</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/git_utils/commands.html#add_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.add_file" title="Link to this definition">¶</a></dt>
+<dd><p>Add the given file to the staging area.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="git_utils.commit">
+<span class="sig-prename descclassname"><span class="pre">git_utils.</span></span><span class="sig-name descname"><span class="pre">commit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repo</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#git_utils.Repo" title="git.repo.base.Repo"><span class="pre">Repo</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amend</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/git_utils/commands.html#commit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.commit" title="Link to this definition">¶</a></dt>
+<dd><p>Commit the staged changes with the given message.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="git_utils.get_changed_files">
+<span class="sig-prename descclassname"><span class="pre">git_utils.</span></span><span class="sig-name descname"><span class="pre">get_changed_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repo</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#git_utils.Repo" title="git.repo.base.Repo"><span class="pre">Repo</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/git_utils/commands.html#get_changed_files"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.get_changed_files" title="Link to this definition">¶</a></dt>
+<dd><p>Return the list of changed files in the repository.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="git_utils.get_git_repo">
+<span class="sig-prename descclassname"><span class="pre">git_utils.</span></span><span class="sig-name descname"><span class="pre">get_git_repo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#git_utils.Repo" title="git.repo.base.Repo"><span class="pre">Repo</span></a></span></span><a class="reference internal" href="_modules/git_utils/commands.html#get_git_repo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.get_git_repo" title="Link to this definition">¶</a></dt>
+<dd><p>Return the current Git repository.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="git_utils.get_origin">
+<span class="sig-prename descclassname"><span class="pre">git_utils.</span></span><span class="sig-name descname"><span class="pre">get_origin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repo</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#git_utils.Repo" title="git.repo.base.Repo"><span class="pre">Repo</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Remote</span></span></span><a class="reference internal" href="_modules/git_utils/commands.html#get_origin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.get_origin" title="Link to this definition">¶</a></dt>
+<dd><p>Return the origin remote of the repository.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="git_utils.pull_changes">
+<span class="sig-prename descclassname"><span class="pre">git_utils.</span></span><span class="sig-name descname"><span class="pre">pull_changes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">origin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Remote</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">branch</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/git_utils/commands.html#pull_changes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.pull_changes" title="Link to this definition">¶</a></dt>
+<dd><p>Pull changes from the remote and rebase them.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="git_utils.push">
+<span class="sig-prename descclassname"><span class="pre">git_utils.</span></span><span class="sig-name descname"><span class="pre">push</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repo</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#git_utils.Repo" title="git.repo.base.Repo"><span class="pre">Repo</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/git_utils/commands.html#push"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#git_utils.push" title="Link to this definition">¶</a></dt>
+<dd><p>Push the changes to the remote repository.</p>
+</dd></dl>
+
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">git_utils package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-git_utils.commands">git_utils.commands module</a><ul>
+<li><a class="reference internal" href="#git_utils.commands.add_file"><code class="docutils literal notranslate"><span class="pre">add_file()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.commands.commit"><code class="docutils literal notranslate"><span class="pre">commit()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.commands.get_changed_files"><code class="docutils literal notranslate"><span class="pre">get_changed_files()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.commands.get_git_repo"><code class="docutils literal notranslate"><span class="pre">get_git_repo()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.commands.get_origin"><code class="docutils literal notranslate"><span class="pre">get_origin()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.commands.pull_changes"><code class="docutils literal notranslate"><span class="pre">pull_changes()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.commands.push"><code class="docutils literal notranslate"><span class="pre">push()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-git_utils">Module contents</a><ul>
+<li><a class="reference internal" href="#git_utils.GitCommandError"><code class="docutils literal notranslate"><span class="pre">GitCommandError</span></code></a><ul>
+<li><a class="reference internal" href="#git_utils.GitCommandError.__init__"><code class="docutils literal notranslate"><span class="pre">GitCommandError.__init__()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#git_utils.Repo"><code class="docutils literal notranslate"><span class="pre">Repo</span></code></a><ul>
+<li><a class="reference internal" href="#git_utils.Repo.DAEMON_EXPORT_FILE"><code class="docutils literal notranslate"><span class="pre">Repo.DAEMON_EXPORT_FILE</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.GitCommandWrapperType"><code class="docutils literal notranslate"><span class="pre">Repo.GitCommandWrapperType</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.__init__"><code class="docutils literal notranslate"><span class="pre">Repo.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo._clone"><code class="docutils literal notranslate"><span class="pre">Repo._clone()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo._common_dir"><code class="docutils literal notranslate"><span class="pre">Repo._common_dir</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo._config_reader"><code class="docutils literal notranslate"><span class="pre">Repo._config_reader()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo._get_alternates"><code class="docutils literal notranslate"><span class="pre">Repo._get_alternates()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo._get_config_path"><code class="docutils literal notranslate"><span class="pre">Repo._get_config_path()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo._get_untracked_files"><code class="docutils literal notranslate"><span class="pre">Repo._get_untracked_files()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo._set_alternates"><code class="docutils literal notranslate"><span class="pre">Repo._set_alternates()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo._to_full_tag_path"><code class="docutils literal notranslate"><span class="pre">Repo._to_full_tag_path()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo._working_tree_dir"><code class="docutils literal notranslate"><span class="pre">Repo._working_tree_dir</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.active_branch"><code class="docutils literal notranslate"><span class="pre">Repo.active_branch</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.alternates"><code class="docutils literal notranslate"><span class="pre">Repo.alternates</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.archive"><code class="docutils literal notranslate"><span class="pre">Repo.archive()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.bare"><code class="docutils literal notranslate"><span class="pre">Repo.bare</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.blame"><code class="docutils literal notranslate"><span class="pre">Repo.blame()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.blame_incremental"><code class="docutils literal notranslate"><span class="pre">Repo.blame_incremental()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.branches"><code class="docutils literal notranslate"><span class="pre">Repo.branches</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.clone"><code class="docutils literal notranslate"><span class="pre">Repo.clone()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.clone_from"><code class="docutils literal notranslate"><span class="pre">Repo.clone_from()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.close"><code class="docutils literal notranslate"><span class="pre">Repo.close()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.commit"><code class="docutils literal notranslate"><span class="pre">Repo.commit()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.common_dir"><code class="docutils literal notranslate"><span class="pre">Repo.common_dir</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.config_level"><code class="docutils literal notranslate"><span class="pre">Repo.config_level</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.config_reader"><code class="docutils literal notranslate"><span class="pre">Repo.config_reader()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.config_writer"><code class="docutils literal notranslate"><span class="pre">Repo.config_writer()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.create_head"><code class="docutils literal notranslate"><span class="pre">Repo.create_head()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.create_remote"><code class="docutils literal notranslate"><span class="pre">Repo.create_remote()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.create_submodule"><code class="docutils literal notranslate"><span class="pre">Repo.create_submodule()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.create_tag"><code class="docutils literal notranslate"><span class="pre">Repo.create_tag()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.currently_rebasing_on"><code class="docutils literal notranslate"><span class="pre">Repo.currently_rebasing_on()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.daemon_export"><code class="docutils literal notranslate"><span class="pre">Repo.daemon_export</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.delete_head"><code class="docutils literal notranslate"><span class="pre">Repo.delete_head()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.delete_remote"><code class="docutils literal notranslate"><span class="pre">Repo.delete_remote()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.delete_tag"><code class="docutils literal notranslate"><span class="pre">Repo.delete_tag()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.description"><code class="docutils literal notranslate"><span class="pre">Repo.description</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.git"><code class="docutils literal notranslate"><span class="pre">Repo.git</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.git_dir"><code class="docutils literal notranslate"><span class="pre">Repo.git_dir</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.has_separate_working_tree"><code class="docutils literal notranslate"><span class="pre">Repo.has_separate_working_tree()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.head"><code class="docutils literal notranslate"><span class="pre">Repo.head</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.heads"><code class="docutils literal notranslate"><span class="pre">Repo.heads</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.ignored"><code class="docutils literal notranslate"><span class="pre">Repo.ignored()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.index"><code class="docutils literal notranslate"><span class="pre">Repo.index</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.init"><code class="docutils literal notranslate"><span class="pre">Repo.init()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.is_ancestor"><code class="docutils literal notranslate"><span class="pre">Repo.is_ancestor()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.is_dirty"><code class="docutils literal notranslate"><span class="pre">Repo.is_dirty()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.is_valid_object"><code class="docutils literal notranslate"><span class="pre">Repo.is_valid_object()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.iter_commits"><code class="docutils literal notranslate"><span class="pre">Repo.iter_commits()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.iter_submodules"><code class="docutils literal notranslate"><span class="pre">Repo.iter_submodules()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.iter_trees"><code class="docutils literal notranslate"><span class="pre">Repo.iter_trees()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.merge_base"><code class="docutils literal notranslate"><span class="pre">Repo.merge_base()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.re_author_committer_start"><code class="docutils literal notranslate"><span class="pre">Repo.re_author_committer_start</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.re_envvars"><code class="docutils literal notranslate"><span class="pre">Repo.re_envvars</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.re_hexsha_only"><code class="docutils literal notranslate"><span class="pre">Repo.re_hexsha_only</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.re_hexsha_shortened"><code class="docutils literal notranslate"><span class="pre">Repo.re_hexsha_shortened</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.re_tab_full_line"><code class="docutils literal notranslate"><span class="pre">Repo.re_tab_full_line</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.re_whitespace"><code class="docutils literal notranslate"><span class="pre">Repo.re_whitespace</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.references"><code class="docutils literal notranslate"><span class="pre">Repo.references</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.refs"><code class="docutils literal notranslate"><span class="pre">Repo.refs</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.remote"><code class="docutils literal notranslate"><span class="pre">Repo.remote()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.remotes"><code class="docutils literal notranslate"><span class="pre">Repo.remotes</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.rev_parse"><code class="docutils literal notranslate"><span class="pre">Repo.rev_parse()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.submodule"><code class="docutils literal notranslate"><span class="pre">Repo.submodule()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.submodule_update"><code class="docutils literal notranslate"><span class="pre">Repo.submodule_update()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.submodules"><code class="docutils literal notranslate"><span class="pre">Repo.submodules</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.tag"><code class="docutils literal notranslate"><span class="pre">Repo.tag()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.tags"><code class="docutils literal notranslate"><span class="pre">Repo.tags</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.tree"><code class="docutils literal notranslate"><span class="pre">Repo.tree()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.unsafe_git_clone_options"><code class="docutils literal notranslate"><span class="pre">Repo.unsafe_git_clone_options</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.untracked_files"><code class="docutils literal notranslate"><span class="pre">Repo.untracked_files</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.working_dir"><code class="docutils literal notranslate"><span class="pre">Repo.working_dir</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.Repo.working_tree_dir"><code class="docutils literal notranslate"><span class="pre">Repo.working_tree_dir</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#git_utils.add_file"><code class="docutils literal notranslate"><span class="pre">add_file()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.commit"><code class="docutils literal notranslate"><span class="pre">commit()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.get_changed_files"><code class="docutils literal notranslate"><span class="pre">get_changed_files()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.get_git_repo"><code class="docutils literal notranslate"><span class="pre">get_git_repo()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.get_origin"><code class="docutils literal notranslate"><span class="pre">get_origin()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.pull_changes"><code class="docutils literal notranslate"><span class="pre">pull_changes()</span></code></a></li>
+<li><a class="reference internal" href="#git_utils.push"><code class="docutils literal notranslate"><span class="pre">push()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="cli.html"
+                          title="previous chapter">cli package</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="main.html"
+                          title="next chapter">main module</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/git_utils.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="main.html" title="main module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="cli.html" title="cli package"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Easy Git CLI 0.3.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >src</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">git_utils package</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Omar Allouch.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    </div>
+  </body>
+</html>
