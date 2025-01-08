@@ -1,5 +1,6 @@
 dist/
 __pycache__/
 logs/
-docs/
+docs/*
+!docs/source/
 
